@@ -1,0 +1,225 @@
+<svg viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" width="960" height="720" font-family="system-ui, -apple-system, sans-serif">
+  <title>Employee Onboarding Workflow Automator — Architecture Diagram</title>
+  <desc>System architecture showing frontend, backend, AI, database, and external service layers</desc>
+
+  <!-- Background -->
+  <rect width="960" height="720" fill="#f8f9fc"/>
+
+  <!-- LAYER LABELS -->
+  <text x="18" y="108" font-size="10" fill="#94a3b8" font-weight="600" transform="rotate(-90,18,108)" text-anchor="middle">CLIENT</text>
+  <text x="18" y="252" font-size="10" fill="#94a3b8" font-weight="600" transform="rotate(-90,18,252)" text-anchor="middle">API</text>
+  <text x="18" y="420" font-size="10" fill="#94a3b8" font-weight="600" transform="rotate(-90,18,420)" text-anchor="middle">SERVICES</text>
+  <text x="18" y="570" font-size="10" fill="#94a3b8" font-weight="600" transform="rotate(-90,18,570)" text-anchor="middle">DATA</text>
+  <text x="18" y="670" font-size="10" fill="#94a3b8" font-weight="600" transform="rotate(-90,18,670)" text-anchor="middle">EXTERNAL</text>
+
+  <!-- LAYER 1 — FRONTEND -->
+  <rect x="36" y="24" width="900" height="148" rx="10" fill="#f0f4ff" stroke="#c7d2fe" stroke-width="1.5"/>
+  <text x="486" y="44" text-anchor="middle" font-size="11" font-weight="700" fill="#4338ca">FRONTEND — React 18 + TypeScript + Vite</text>
+
+  <rect x="52" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="110" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">Dashboard</text>
+  <text x="110" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">KPIs · Pipeline</text>
+
+  <rect x="178" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="236" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">Workflows</text>
+  <text x="236" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">List · Detail</text>
+
+  <rect x="304" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="362" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">New Employee</text>
+  <text x="362" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">Create · Onboard</text>
+
+  <rect x="430" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="488" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">Notifications</text>
+  <text x="488" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">In-app · Real-time</text>
+
+  <rect x="556" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="614" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">Analytics</text>
+  <text x="614" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">Recharts · CSV/PDF</text>
+
+  <rect x="682" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="740" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">AI Assistant</text>
+  <text x="740" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">RAG Chat · Upload</text>
+
+  <rect x="808" y="56" width="116" height="50" rx="6" fill="#6366f1"/>
+  <text x="866" y="77" text-anchor="middle" font-size="9" font-weight="600" fill="white">Employee Portal</text>
+  <text x="866" y="91" text-anchor="middle" font-size="8" fill="#c7d2fe">Self-service View</text>
+
+  <rect x="52" y="116" width="274" height="44" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="189" y="133" text-anchor="middle" font-size="9" font-weight="600" fill="#3730a3">TanStack Query</text>
+  <text x="189" y="147" text-anchor="middle" font-size="8" fill="#4338ca">Server-state · Polling · Mutations</text>
+
+  <rect x="336" y="116" width="180" height="44" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="426" y="133" text-anchor="middle" font-size="9" font-weight="600" fill="#3730a3">Zustand</text>
+  <text x="426" y="147" text-anchor="middle" font-size="8" fill="#4338ca">Auth Store · UI State</text>
+
+  <rect x="526" y="116" width="180" height="44" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="616" y="133" text-anchor="middle" font-size="9" font-weight="600" fill="#3730a3">Axios Client</text>
+  <text x="616" y="147" text-anchor="middle" font-size="8" fill="#4338ca">HTTP-only Cookie Auth</text>
+
+  <rect x="716" y="116" width="220" height="44" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="826" y="133" text-anchor="middle" font-size="9" font-weight="600" fill="#3730a3">React Router v6</text>
+  <text x="826" y="147" text-anchor="middle" font-size="8" fill="#4338ca">Protected Routes · RBAC Guards</text>
+
+  <!-- Arrow: Frontend to API -->
+  <line x1="486" y1="172" x2="486" y2="192" stroke="#6366f1" stroke-width="2" marker-end="url(#arr-purple)"/>
+  <text x="500" y="185" font-size="9" fill="#6366f1">REST / JSON</text>
+
+  <!-- LAYER 2 — API -->
+  <rect x="36" y="192" width="900" height="100" rx="10" fill="#fdf4ff" stroke="#e9d5ff" stroke-width="1.5"/>
+  <text x="486" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">API LAYER — FastAPI + Uvicorn (ASGI) · Port 8000</text>
+
+  <rect x="52" y="220" width="124" height="56" rx="6" fill="#7c3aed"/>
+  <text x="114" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">Auth</text>
+  <text x="114" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">JWT Cookie</text>
+  <text x="114" y="268" text-anchor="middle" font-size="8" fill="#ddd6fe">Google OAuth</text>
+
+  <rect x="186" y="220" width="124" height="56" rx="6" fill="#7c3aed"/>
+  <text x="248" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">Employees</text>
+  <text x="248" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">CRUD · Search</text>
+  <text x="248" y="268" text-anchor="middle" font-size="8" fill="#ddd6fe">RBAC gated</text>
+
+  <rect x="320" y="220" width="124" height="56" rx="6" fill="#7c3aed"/>
+  <text x="382" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">Onboarding</text>
+  <text x="382" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">Workflows · Tasks</text>
+  <text x="382" y="268" text-anchor="middle" font-size="8" fill="#ddd6fe">Meetings</text>
+
+  <rect x="454" y="220" width="124" height="56" rx="6" fill="#7c3aed"/>
+  <text x="516" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">Notifications</text>
+  <text x="516" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">List · Read</text>
+  <text x="516" y="268" text-anchor="middle" font-size="8" fill="#ddd6fe">Unread Count</text>
+
+  <rect x="588" y="220" width="124" height="56" rx="6" fill="#7c3aed"/>
+  <text x="650" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">Analytics</text>
+  <text x="650" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">Dashboard Stats</text>
+  <text x="650" y="268" text-anchor="middle" font-size="8" fill="#ddd6fe">Reports · Export</text>
+
+  <rect x="722" y="220" width="124" height="56" rx="6" fill="#7c3aed"/>
+  <text x="784" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">RAG / AI</text>
+  <text x="784" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">Upload · Query</text>
+  <text x="784" y="268" text-anchor="middle" font-size="8" fill="#ddd6fe">Chat History</text>
+
+  <rect x="856" y="220" width="68" height="56" rx="6" fill="#7c3aed"/>
+  <text x="890" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="white">Audit</text>
+  <text x="890" y="255" text-anchor="middle" font-size="8" fill="#ddd6fe">Logs</text>
+
+  <!-- Arrow: API to Services -->
+  <line x1="486" y1="292" x2="486" y2="316" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-violet)"/>
+
+  <!-- LAYER 3 — SERVICES -->
+  <rect x="36" y="316" width="900" height="192" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="486" y="335" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">SERVICE LAYER — Business Logic (Python / SQLAlchemy Async)</text>
+
+  <rect x="52" y="346" width="128" height="64" rx="6" fill="#16a34a"/>
+  <text x="116" y="366" text-anchor="middle" font-size="9" font-weight="600" fill="white">EmployeeService</text>
+  <text x="116" y="380" text-anchor="middle" font-size="8" fill="#bbf7d0">Create · Update</text>
+  <text x="116" y="393" text-anchor="middle" font-size="8" fill="#bbf7d0">company_email gen</text>
+
+  <rect x="190" y="346" width="128" height="64" rx="6" fill="#16a34a"/>
+  <text x="254" y="366" text-anchor="middle" font-size="9" font-weight="600" fill="white">OnboardingService</text>
+  <text x="254" y="380" text-anchor="middle" font-size="8" fill="#bbf7d0">Workflow CRUD</text>
+  <text x="254" y="393" text-anchor="middle" font-size="8" fill="#bbf7d0">Task · Meeting Mgmt</text>
+
+  <rect x="328" y="346" width="128" height="64" rx="6" fill="#16a34a"/>
+  <text x="392" y="366" text-anchor="middle" font-size="9" font-weight="600" fill="white">NotificationSvc</text>
+  <text x="392" y="380" text-anchor="middle" font-size="8" fill="#bbf7d0">In-app + Email</text>
+  <text x="392" y="393" text-anchor="middle" font-size="8" fill="#bbf7d0">Welcome · Docs email</text>
+
+  <rect x="466" y="346" width="128" height="64" rx="6" fill="#16a34a"/>
+  <text x="530" y="366" text-anchor="middle" font-size="9" font-weight="600" fill="white">AnalyticsService</text>
+  <text x="530" y="380" text-anchor="middle" font-size="8" fill="#bbf7d0">Dashboard Stats</text>
+  <text x="530" y="393" text-anchor="middle" font-size="8" fill="#bbf7d0">Sequential queries</text>
+
+  <rect x="604" y="346" width="128" height="64" rx="6" fill="#16a34a"/>
+  <text x="668" y="366" text-anchor="middle" font-size="9" font-weight="600" fill="white">AuthService</text>
+  <text x="668" y="380" text-anchor="middle" font-size="8" fill="#bbf7d0">JWT · bcrypt</text>
+  <text x="668" y="393" text-anchor="middle" font-size="8" fill="#bbf7d0">Google OAuth flow</text>
+
+  <rect x="742" y="346" width="180" height="64" rx="6" fill="#16a34a"/>
+  <text x="832" y="366" text-anchor="middle" font-size="9" font-weight="600" fill="white">AuditService</text>
+  <text x="832" y="380" text-anchor="middle" font-size="8" fill="#bbf7d0">Action Logs</text>
+  <text x="832" y="393" text-anchor="middle" font-size="8" fill="#bbf7d0">RBAC filtered</text>
+
+  <rect x="52" y="424" width="200" height="68" rx="6" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+  <text x="152" y="444" text-anchor="middle" font-size="9" font-weight="700" fill="white">LangGraph Orchestrator</text>
+  <text x="152" y="458" text-anchor="middle" font-size="8" fill="#6ee7b7">Deterministic State Machine</text>
+  <text x="152" y="471" text-anchor="middle" font-size="8" fill="#6ee7b7">hr_review → provisioning →</text>
+  <text x="152" y="484" text-anchor="middle" font-size="8" fill="#6ee7b7">meetings → docs → completed</text>
+
+  <rect x="262" y="424" width="160" height="68" rx="6" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+  <text x="342" y="444" text-anchor="middle" font-size="9" font-weight="600" fill="white">OrchestrationService</text>
+  <text x="342" y="460" text-anchor="middle" font-size="8" fill="#6ee7b7">Task Blueprint Gen</text>
+  <text x="342" y="473" text-anchor="middle" font-size="8" fill="#6ee7b7">State Advancement</text>
+  <text x="342" y="486" text-anchor="middle" font-size="8" fill="#6ee7b7">Event Logging</text>
+
+  <rect x="432" y="424" width="200" height="68" rx="6" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+  <text x="532" y="444" text-anchor="middle" font-size="9" font-weight="700" fill="white">RAG Pipeline</text>
+  <text x="532" y="458" text-anchor="middle" font-size="8" fill="#6ee7b7">PDF → Chunk → Embed</text>
+  <text x="532" y="471" text-anchor="middle" font-size="8" fill="#6ee7b7">ChromaDB Retrieve</text>
+  <text x="532" y="484" text-anchor="middle" font-size="8" fill="#6ee7b7">LangChain LCEL Chain</text>
+
+  <rect x="642" y="424" width="280" height="68" rx="6" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+  <text x="782" y="444" text-anchor="middle" font-size="9" font-weight="700" fill="white">LLM Layer — LiteLLM Proxy</text>
+  <text x="782" y="460" text-anchor="middle" font-size="8" fill="#6ee7b7">gemini-2.5-flash (fast) · gpt-4o (advanced)</text>
+  <text x="782" y="473" text-anchor="middle" font-size="8" fill="#6ee7b7">text-embedding-3-large (embeddings)</text>
+  <text x="782" y="486" text-anchor="middle" font-size="8" fill="#6ee7b7">LangChain ChatOpenAI client</text>
+
+  <!-- Arrows: Services to Data -->
+  <line x1="300" y1="508" x2="300" y2="530" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-green)"/>
+  <line x1="650" y1="508" x2="650" y2="530" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-green)"/>
+
+  <!-- LAYER 4 — DATA -->
+  <rect x="36" y="528" width="900" height="100" rx="10" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="486" y="547" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">DATA LAYER</text>
+
+  <rect x="52" y="558" width="340" height="56" rx="6" fill="#d97706"/>
+  <text x="222" y="579" text-anchor="middle" font-size="9" font-weight="700" fill="white">PostgreSQL (Supabase) — Primary Store</text>
+  <text x="222" y="594" text-anchor="middle" font-size="8" fill="#fef3c7">users · employees · workflows · tasks · meetings · notifications · audit_logs</text>
+  <text x="222" y="607" text-anchor="middle" font-size="8" fill="#fef3c7">asyncpg + NullPool · Alembic migrations · RBAC-aware queries</text>
+
+  <rect x="402" y="558" width="240" height="56" rx="6" fill="#d97706"/>
+  <text x="522" y="579" text-anchor="middle" font-size="9" font-weight="700" fill="white">ChromaDB — Vector Store</text>
+  <text x="522" y="594" text-anchor="middle" font-size="8" fill="#fef3c7">Per-user collections: user_{id}</text>
+  <text x="522" y="607" text-anchor="middle" font-size="8" fill="#fef3c7">Semantic retrieval for RAG</text>
+
+  <rect x="652" y="558" width="272" height="56" rx="6" fill="#b45309"/>
+  <text x="788" y="579" text-anchor="middle" font-size="9" font-weight="700" fill="white">Schema Management</text>
+  <text x="788" y="594" text-anchor="middle" font-size="8" fill="#fef3c7">Alembic migrations (8 versions)</text>
+  <text x="788" y="607" text-anchor="middle" font-size="8" fill="#fef3c7">25 performance indexes (migration 008)</text>
+
+  <!-- LAYER 5 — EXTERNAL -->
+  <rect x="36" y="638" width="900" height="64" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="486" y="657" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">EXTERNAL SERVICES</text>
+
+  <rect x="52" y="664" width="164" height="28" rx="5" fill="#475569"/>
+  <text x="134" y="678" text-anchor="middle" font-size="9" font-weight="600" fill="white">SMTP (Gmail · smtp:587)</text>
+  <text x="134" y="689" text-anchor="middle" font-size="8" fill="#e2e8f0">Welcome · Docs emails</text>
+
+  <rect x="226" y="664" width="164" height="28" rx="5" fill="#475569"/>
+  <text x="308" y="678" text-anchor="middle" font-size="9" font-weight="600" fill="white">Google OAuth 2.0</text>
+  <text x="308" y="689" text-anchor="middle" font-size="8" fill="#e2e8f0">SSO Login flow</text>
+
+  <rect x="400" y="664" width="210" height="28" rx="5" fill="#475569"/>
+  <text x="505" y="678" text-anchor="middle" font-size="9" font-weight="600" fill="white">LiteLLM Proxy Gateway</text>
+  <text x="505" y="689" text-anchor="middle" font-size="8" fill="#e2e8f0">Gemini 2.5 Flash · GPT-4o</text>
+
+  <rect x="620" y="664" width="164" height="28" rx="5" fill="#475569"/>
+  <text x="702" y="678" text-anchor="middle" font-size="9" font-weight="600" fill="white">Google Drive</text>
+  <text x="702" y="689" text-anchor="middle" font-size="8" fill="#e2e8f0">Onboarding document links</text>
+
+  <rect x="794" y="664" width="130" height="28" rx="5" fill="#475569"/>
+  <text x="859" y="678" text-anchor="middle" font-size="9" font-weight="600" fill="white">Docker Compose</text>
+  <text x="859" y="689" text-anchor="middle" font-size="8" fill="#e2e8f0">Local orchestration</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-violet" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+</svg>
