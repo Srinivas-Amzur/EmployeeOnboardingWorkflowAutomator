@@ -1,0 +1,1 @@
+function s(a){const o=new Date(a).getTime(),n=Date.now(),e=Math.max(1,Math.floor((n-o)/6e4));if(e<60)return`${e} minute${e>1?"s":""} ago`;const t=Math.floor(e/60);return t<24?`${t} hour${t>1?"s":""} ago`:t<48?"yesterday":`${Math.floor(t/24)} days ago`}export{s as f};

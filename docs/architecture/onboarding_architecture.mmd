@@ -1,0 +1,155 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#E6F1FB', 'primaryBorderColor': '#378ADD', 'primaryTextColor': '#042C53', 'secondaryColor': '#E1F5EE', 'tertiaryColor': '#FAEEDA', 'background': '#ffffff', 'lineColor': '#5F5E5A', 'fontFamily': 'sans-serif', 'fontSize': '14px'}}}%%
+graph TD
+
+    %% ── USERS ──
+    subgraph USERS["👥 Users"]
+        U1[HR Admin]
+        U2[IT Admin]
+        U3[Manager]
+        U4[Employee]
+    end
+
+    %% ── FRONTEND ──
+    subgraph FRONTEND["🖥️ Frontend Layer · React · TypeScript · Tailwind CSS · Zustand · TanStack Query"]
+        FE1[Dashboard]
+        FE2[Employee Onboarding]
+        FE3[Task Tracking]
+        FE4[Notifications]
+        FE5[Analytics]
+        FE6[AI Assistant Chat]
+        FE7[Document Management]
+    end
+
+    %% ── API LAYER ──
+    subgraph API["⚙️ API Layer · FastAPI · Python 3.11"]
+        A1[Authentication\nJWT HttpOnly Cookie]
+        A2[Authorization\nRBAC · 4 Roles]
+        A3[REST Endpoints]
+        A4[Workflow Trigger]
+        A5[Business Logic]
+        A6[AI Integration Bridge]
+    end
+
+    %% ── SERVICE LAYER ──
+    subgraph SERVICES["🔧 Service Layer"]
+        S1[Employee Service]
+        S2[Workflow Service]
+        S3[Notification Service]
+        S4[Document Service]
+        S5[Analytics Service]
+        S6[AI Assistant Service]
+    end
+
+    %% ── AI ORCHESTRATION ──
+    subgraph AI_ORCH["🤖 AI Orchestration · LangGraph · LangChain LCEL"]
+        N1[Create Workflow]
+        N2[Assign Tasks]
+        N3[IT Provisioning]
+        N4[Schedule Meetings]
+        N5[Document Distribution]
+        N6[Send Notifications]
+        N7[Mark Complete]
+    end
+
+    %% ── LLM GATEWAY ──
+    subgraph LLM_GW["🔀 LLM Gateway · LiteLLM Proxy"]
+        L1[GPT-4o]
+        L2[Gemini 2.5 Flash]
+        L3[Model Routing\n& Cost Control]
+        L4[Observability]
+    end
+
+    %% ── RAG LAYER ──
+    subgraph RAG["📚 RAG Layer · ChromaDB"]
+        R1[Upload Document]
+        R2[Chunk & Tokenise]
+        R3[Create Embeddings]
+        R4[Store in ChromaDB]
+        R5[Semantic Search]
+        R6[Return Context]
+    end
+
+    %% ── DATA LAYER ──
+    subgraph DATA["🗄️ Data Layer · PostgreSQL · RDS"]
+        D1[(Users)]
+        D2[(Employees)]
+        D3[(Onboarding Workflows)]
+        D4[(Onboarding Tasks)]
+        D5[(Notifications)]
+        D6[(Documents)]
+        D7[(Orchestration Events)]
+    end
+
+    %% ── NOTIFICATION LAYER ──
+    subgraph NOTIFY["🔔 Notification Layer"]
+        NO1[Email Channel]
+        NO2[In-App Notifications]
+        NO3{Triggers}
+        NO4[Workflow Started]
+        NO5[Task Assigned]
+        NO6[Task Completed]
+        NO7[Delayed Task]
+        NO8[Workflow Complete]
+    end
+
+    %% ── AWS INFRA ──
+    subgraph AWS["☁️ AWS Infrastructure"]
+        AW1[CloudFront CDN]
+        AW2[Application Load Balancer]
+        AW3[ECS Fargate Cluster]
+        AW4[RDS PostgreSQL Multi-AZ]
+        AW5[S3 Buckets]
+        AW6[Secrets Manager]
+        AW7[CloudWatch Logs & Alarms]
+        AW8[GitHub Actions CI/CD]
+    end
+
+    %% ── FLOWS ──
+    USERS --> FRONTEND
+    FRONTEND -->|HTTPS REST| API
+    API --> A1 --> A2 --> A3
+    A3 --> SERVICES
+    SERVICES --> S6
+    S6 --> AI_ORCH
+
+    AI_ORCH --> LLM_GW
+    AI_ORCH --> RAG
+    RAG -->|Context chunks| AI_ORCH
+    LLM_GW --> L1 & L2
+
+    SERVICES --> DATA
+    SERVICES --> S3
+    S3 --> NO3
+    NO3 --> NO4 & NO5 & NO6 & NO7 & NO8
+    NO4 & NO5 & NO6 & NO7 & NO8 --> NO1 & NO2
+
+    S4 --> R1 --> R2 --> R3 --> R4
+    R4 --> R5 --> R6
+
+    AWS --> AW1 --> FRONTEND
+    AW1 --> AW2 --> AW3
+    AW3 --> AW4 & AW5
+    AW8 -->|Docker build & deploy| AW3
+    AW7 -.->|Monitor| AW3
+
+    %% ── STYLING ──
+    classDef userStyle   fill:#EEEDFE,stroke:#7F77DD,color:#26215C
+    classDef frontStyle  fill:#E6F1FB,stroke:#378ADD,color:#042C53
+    classDef apiStyle    fill:#E1F5EE,stroke:#1D9E75,color:#04342C
+    classDef aiStyle     fill:#FAEEDA,stroke:#BA7517,color:#412402
+    classDef llmStyle    fill:#FAECE7,stroke:#D85A30,color:#4A1B0C
+    classDef ragStyle    fill:#EAF3DE,stroke:#639922,color:#173404
+    classDef dataStyle   fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
+    classDef notifyStyle fill:#FBEAF0,stroke:#D4537E,color:#4B1528
+    classDef awsStyle    fill:#E6F1FB,stroke:#185FA5,color:#042C53
+
+    class U1,U2,U3,U4 userStyle
+    class FE1,FE2,FE3,FE4,FE5,FE6,FE7 frontStyle
+    class A1,A2,A3,A4,A5,A6 apiStyle
+    class S1,S2,S3,S4,S5,S6 apiStyle
+    class N1,N2,N3,N4,N5,N6,N7 aiStyle
+    class L1,L2,L3,L4 llmStyle
+    class R1,R2,R3,R4,R5,R6 ragStyle
+    class D1,D2,D3,D4,D5,D6,D7 dataStyle
+    class NO1,NO2,NO3,NO4,NO5,NO6,NO7,NO8 notifyStyle
+    class AW1,AW2,AW3,AW4,AW5,AW6,AW7,AW8 awsStyle

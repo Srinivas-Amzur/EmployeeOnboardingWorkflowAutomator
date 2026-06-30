@@ -1,0 +1,83 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: onboarding_postgres
+    environment:
+      POSTGRES_DB: onboarding_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ChromaDB Vector Store
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: onboarding_chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chromadb_data:/chroma/chroma_data
+    environment:
+      ALLOW_RESET: "true"
+      ANONYMIZED_TELEMETRY: "false"
+
+  # Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: onboarding_backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:password@postgres:5432/onboarding_db
+      CHROMADB_HOST: chromadb
+      CHROMADB_PORT: 8000
+      LITELLM_PROXY_URL: ${LITELLM_PROXY_URL}
+      LITELLM_API_KEY: ${LITELLM_API_KEY}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-your-secret-key-change-in-production}
+      ENVIRONMENT: development
+      DEBUG: "true"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      chromadb:
+        condition: service_started
+    volumes:
+      - ./backend:/app
+      - uploads:/app/uploads
+    command: python main.py
+
+  # Frontend Development
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: onboarding_frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: http://localhost:8000/api/v1
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    command: npm run dev
+
+volumes:
+  postgres_data:
+  chromadb_data:
+  uploads:
+
+networks:
+  default:
+    name: onboarding_network

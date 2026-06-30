@@ -1,0 +1,82 @@
+flowchart LR
+  %% =========================
+  %% Employee Onboarding Workflow Automator
+  %% Presentation-ready Architecture Diagram
+  %% =========================
+
+  user[User]
+
+  subgraph FE[Frontend Layer]
+    react[React UI]
+    ts[TypeScript]
+    zustand[Zustand State Store]
+    rq[TanStack Query]
+    tw[TailwindCSS]
+    pages[Pages: Dashboard, Workflows, Notifications, Analytics, AI Assistant]
+
+    react --> ts
+    react --> zustand
+    react --> rq
+    react --> tw
+    react --> pages
+  end
+
+  subgraph BE[Backend Layer]
+    fastapi[FastAPI APIs]
+    routers[Routers]
+    auth[Authentication Layer<br/>JWT + Role Guards]
+    services[Service Layer]
+    sqlalchemy[SQLAlchemy]
+
+    fastapi --> routers --> auth --> services --> sqlalchemy
+  end
+
+  subgraph AI[AI Layer]
+    assistant[AI Assistant]
+    langgraph[LangGraph Workflow Engine]
+    langchain[LangChain / LCEL Chains]
+    rag[RAG Engine]
+    litellm[LiteLLM Gateway]
+
+    assistant --> langgraph --> langchain --> rag
+    langchain --> litellm
+  end
+
+  subgraph ST[Storage Layer]
+    pg[(PostgreSQL / Supabase)]
+    chroma[(ChromaDB)]
+    files[(File Storage<br/>uploads/rag)]
+  end
+
+  %% Core app flow (required)
+  user --> react
+  react --> fastapi
+  fastapi --> services
+  services --> pg
+
+  %% AI flow (required)
+  user --> assistant
+  assistant --> langgraph
+  langgraph --> langchain
+  langchain --> chroma
+  chroma --> litellm
+
+  %% Supporting operational flows
+  services --> rag
+  rag --> chroma
+  rag --> files
+  rag --> litellm
+  services --> pg
+
+  %% Styling
+  classDef frontend fill:#e0f2fe,stroke:#0369a1,stroke-width:1.5px,color:#0f172a;
+  classDef backend fill:#ecfccb,stroke:#4d7c0f,stroke-width:1.5px,color:#0f172a;
+  classDef ai fill:#fef3c7,stroke:#b45309,stroke-width:1.5px,color:#0f172a;
+  classDef storage fill:#ede9fe,stroke:#6d28d9,stroke-width:1.5px,color:#0f172a;
+  classDef actor fill:#f1f5f9,stroke:#334155,stroke-width:1.5px,color:#0f172a;
+
+  class user actor;
+  class react,ts,zustand,rq,tw,pages frontend;
+  class fastapi,routers,auth,services,sqlalchemy backend;
+  class assistant,langgraph,langchain,rag,litellm ai;
+  class pg,chroma,files storage;

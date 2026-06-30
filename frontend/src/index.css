@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ──────────────────────────────────────────────── */
+:root {
+  /* Typography */
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Surfaces — light */
+  --surface-page:     #f5f6fa;
+  --surface-base:     #ffffff;
+  --surface-muted:    #f8fafc;
+  --surface-soft:     #f1f5f9;
+  --surface-border:   #e2e8f0;
+  --surface-border-strong: #cbd5e1;
+
+  /* Text — light */
+  --text-primary:   #0f172a;
+  --text-secondary: #64748b;
+  --text-tertiary:  #94a3b8;
+
+  /* Brand — Keka-style violet/purple */
+  --color-primary:        #5b35d9;
+  --color-primary-hover:  #4c2cc3;
+  --color-primary-subtle: #ede9ff;
+
+  /* Semantic */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger:  #dc2626;
+  --color-info:    #0284c7;
+
+  /* Shadows (3-level elevation) */
+  --shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-2: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 4px 12px -2px rgb(0 0 0 / 0.06);
+  --shadow-3: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 16px 32px -4px rgb(0 0 0 / 0.10);
+
+  /* Sidebar — Keka dark charcoal */
+  --sidebar-bg:          #1a1a2e;
+  --sidebar-hover:       rgb(255 255 255 / 0.07);
+  --sidebar-active-bg:   #ffffff;
+  --sidebar-active-text: #5b35d9;
+  --sidebar-text:        rgb(255 255 255 / 0.55);
+  --sidebar-text-hover:  rgb(255 255 255 / 0.90);
+  --sidebar-icon:        rgb(255 255 255 / 0.45);
+  --sidebar-icon-active: #5b35d9;
+
+  /* Topbar — Keka purple gradient */
+  --topbar-from: #3b1fa8;
+  --topbar-to:   #6247d0;
+
+  /* Ring */
+  --ring-primary: #5b35d9;
+}
+
+.dark {
+  --surface-page:   #060d1a;
+  --surface-base:   #0f172a;
+  --surface-muted:  #111827;
+  --surface-soft:   #1e293b;
+  --surface-border: rgb(71 85 105 / 0.28);
+  --surface-border-strong: rgb(100 116 139 / 0.45);
+
+  --text-primary:   #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-tertiary:  #475569;
+
+  --color-primary-subtle: rgb(37 99 235 / 0.12);
+
+  --shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-2: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 4px 12px -2px rgb(0 0 0 / 0.3);
+  --shadow-3: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 16px 32px -4px rgb(0 0 0 / 0.45);
+
+  --ring-primary: #60a5fa;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  background-color: var(--surface-page);
+  min-height: 100vh;
+}
+
+/* ─── Focus ──────────────────────────────────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Form elements ──────────────────────────────────────────────── */
+input,
+select,
+textarea {
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+  border-color: var(--surface-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* ─── Animations ─────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ping-once {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0; }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────────── */
+@layer utilities {
+
+  /* ── Page typography ── */
+  .page-title {
+    @apply text-2xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100;
+  }
+
+  .page-subtitle {
+    @apply mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.08em] text-slate-400 dark:text-slate-500;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold leading-tight text-slate-900 dark:text-slate-100;
+  }
+
+  .card-title {
+    @apply text-[15px] font-semibold leading-snug text-slate-900 dark:text-slate-100;
+  }
+
+  /* ── Surface card ── */
+  .surface-card {
+    background-color: var(--surface-base);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  }
+
+  /* ── KPI card ── */
+  .kpi-card {
+    background-color: var(--surface-base);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+    @apply p-5;
+  }
+
+  /* ── Section shell (labeled content block) ── */
+  .section-shell {
+    background-color: var(--surface-base);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+    @apply p-5;
+  }
+
+  /* ── Input ── */
+  .surface-input {
+    @apply w-full rounded-lg border px-3.5 py-2 text-sm shadow-sm outline-none transition-shadow;
+    background-color: var(--surface-base);
+    border-color: var(--surface-border);
+    color: var(--text-primary);
+  }
+
+  .surface-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgb(91 53 217 / 0.14);
+    outline: none;
+  }
+
+  .dark .surface-input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 3px rgb(167 139 250 / 0.15);
+  }
+
+  .surface-select {
+    @apply surface-input pr-10;
+  }
+
+  /* ── Table ── */
+  .data-table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .data-table thead th {
+    @apply sticky top-0 z-10 border-b px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-[0.08em] whitespace-nowrap;
+    background-color: var(--surface-muted);
+    border-color: var(--surface-border);
+    color: var(--text-secondary);
+  }
+
+  .data-table tbody td {
+    @apply border-b px-4 py-2.5 text-sm;
+    border-color: var(--surface-border);
+    color: var(--text-primary);
+  }
+
+  .data-table tbody tr {
+    background-color: var(--surface-base);
+    transition: background-color 0.1s ease;
+  }
+
+  .data-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .data-table tbody tr:hover td {
+    background-color: var(--surface-soft);
+  }
+
+  /* ── Timeline dot ── */
+  .timeline-dot {
+    @apply h-2 w-2 flex-shrink-0 rounded-full;
+  }
+
+  /* ── Page enter animation ── */
+  .page-enter {
+    animation: fadeInUp 220ms ease-out;
+  }
+
+  /* ── Scrollbar ── */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-border) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--surface-border);
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- USERS LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="users_grp" value="Users" style="swimlane;startSize=30;fillColor=#EEEDFE;strokeColor=#7F77DD;fontColor=#26215C;fontStyle=1;fontSize=13;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="30" width="1500" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_hr" value="HR Admin" style="rounded=1;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;" vertex="1" parent="users_grp">
+      <mxGeometry x="20" y="35" width="150" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_it" value="IT Admin" style="rounded=1;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;" vertex="1" parent="users_grp">
+      <mxGeometry x="190" y="35" width="150" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_mgr" value="Manager" style="rounded=1;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;" vertex="1" parent="users_grp">
+      <mxGeometry x="360" y="35" width="150" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_emp" value="Employee" style="rounded=1;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;" vertex="1" parent="users_grp">
+      <mxGeometry x="530" y="35" width="150" height="35" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- FRONTEND LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="fe_grp" value="Frontend Layer · React · TypeScript · Tailwind CSS · Zustand · TanStack Query" style="swimlane;startSize=35;fillColor=#E6F1FB;strokeColor=#378ADD;fontColor=#042C53;fontStyle=1;fontSize=12;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="160" width="1500" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_dash" value="Dashboard" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="20" y="42" width="170" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_onb" value="Employee Onboarding" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="210" y="42" width="170" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_task" value="Task Tracking" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="400" y="42" width="170" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_notif" value="Notifications" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="590" y="42" width="170" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_analytics" value="Analytics" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="780" y="42" width="170" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_ai" value="AI Assistant" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="970" y="42" width="170" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="fe_doc" value="Document Management" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="fe_grp">
+      <mxGeometry x="1160" y="42" width="180" height="42" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- API LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="api_grp" value="API Layer · FastAPI · Python 3.11" style="swimlane;startSize=30;fillColor=#E1F5EE;strokeColor=#1D9E75;fontColor=#04342C;fontStyle=1;fontSize=12;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="310" width="1500" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="api_auth" value="Authentication&#xa;JWT HttpOnly Cookie" style="rounded=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="api_grp">
+      <mxGeometry x="20" y="35" width="210" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="api_authz" value="Authorization · RBAC&#xa;HR Admin · IT Admin · Manager · Employee" style="rounded=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="api_grp">
+      <mxGeometry x="250" y="35" width="260" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="api_rest" value="REST API Endpoints" style="rounded=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="api_grp">
+      <mxGeometry x="530" y="35" width="200" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="api_wf" value="Workflow Triggering" style="rounded=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="api_grp">
+      <mxGeometry x="750" y="35" width="200" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="api_biz" value="Business Logic" style="rounded=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="api_grp">
+      <mxGeometry x="970" y="35" width="200" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="api_ai" value="AI Integration Bridge" style="rounded=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="api_grp">
+      <mxGeometry x="1190" y="35" width="200" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SERVICE LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="svc_grp" value="Service Layer" style="swimlane;startSize=30;fillColor=#E1F5EE;strokeColor=#1D9E75;fontColor=#04342C;fontStyle=1;fontSize=12;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="460" width="1500" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="s_emp" value="Employee Service" style="rounded=1;fillColor=#5DCAA5;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="svc_grp">
+      <mxGeometry x="20" y="35" width="220" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s_wf" value="Workflow Service" style="rounded=1;fillColor=#5DCAA5;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="svc_grp">
+      <mxGeometry x="260" y="35" width="220" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s_notify" value="Notification Service" style="rounded=1;fillColor=#5DCAA5;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="svc_grp">
+      <mxGeometry x="500" y="35" width="220" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s_doc" value="Document Service" style="rounded=1;fillColor=#5DCAA5;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="svc_grp">
+      <mxGeometry x="740" y="35" width="220" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s_anl" value="Analytics Service" style="rounded=1;fillColor=#5DCAA5;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="svc_grp">
+      <mxGeometry x="980" y="35" width="220" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="s_ai" value="AI Assistant Service" style="rounded=1;fillColor=#5DCAA5;strokeColor=#0F6E56;fontColor=#04342C;fontSize=11;" vertex="1" parent="svc_grp">
+      <mxGeometry x="1220" y="35" width="220" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- AI ORCHESTRATION LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="ai_grp" value="AI Orchestration Layer · LangGraph · LangChain LCEL" style="swimlane;startSize=30;fillColor=#FAEEDA;strokeColor=#BA7517;fontColor=#412402;fontStyle=1;fontSize=12;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="600" width="1500" height="110" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_create" value="Create Workflow" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="20" y="38" width="185" height="52" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_assign" value="Assign Tasks" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="220" y="38" width="185" height="52" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_it" value="IT Provisioning" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="420" y="38" width="185" height="52" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_meet" value="Schedule Meetings" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="620" y="38" width="185" height="52" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_doc" value="Document Distribution" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="820" y="38" width="185" height="52" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_notif" value="Send Notifications" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="1020" y="38" width="185" height="52" as="geometry"/>
+    </mxCell>
+    <mxCell id="n_done" value="Mark Complete" style="rounded=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=11;" vertex="1" parent="ai_grp">
+      <mxGeometry x="1220" y="38" width="230" height="52" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- LLM GATEWAY -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="llm_grp" value="LLM Gateway · LiteLLM Proxy · Unified Access · Model Routing · Cost Control · Observability" style="swimlane;startSize=30;fillColor=#FAECE7;strokeColor=#D85A30;fontColor=#4A1B0C;fontStyle=1;fontSize=11;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="760" width="720" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="l_gpt" value="GPT-4o" style="rounded=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=11;" vertex="1" parent="llm_grp">
+      <mxGeometry x="20" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="l_gem" value="Gemini 2.5 Flash" style="rounded=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=11;" vertex="1" parent="llm_grp">
+      <mxGeometry x="190" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="l_route" value="Model Routing" style="rounded=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=11;" vertex="1" parent="llm_grp">
+      <mxGeometry x="360" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="l_obs" value="Observability" style="rounded=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=11;" vertex="1" parent="llm_grp">
+      <mxGeometry x="530" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- RAG LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="rag_grp" value="RAG Layer · ChromaDB · Document Pipeline · Semantic Search" style="swimlane;startSize=30;fillColor=#EAF3DE;strokeColor=#639922;fontColor=#173404;fontStyle=1;fontSize=11;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="840" y="760" width="720" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="r_up" value="Upload Documents" style="rounded=1;fillColor=#C0DD97;strokeColor=#3B6D11;fontColor=#173404;fontSize=11;" vertex="1" parent="rag_grp">
+      <mxGeometry x="20" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="r_chunk" value="Chunk · Tokenise" style="rounded=1;fillColor=#C0DD97;strokeColor=#3B6D11;fontColor=#173404;fontSize=11;" vertex="1" parent="rag_grp">
+      <mxGeometry x="185" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="r_emb" value="Create Embeddings" style="rounded=1;fillColor=#C0DD97;strokeColor=#3B6D11;fontColor=#173404;fontSize=11;" vertex="1" parent="rag_grp">
+      <mxGeometry x="350" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+    <mxCell id="r_srch" value="Semantic Search" style="rounded=1;fillColor=#C0DD97;strokeColor=#3B6D11;fontColor=#173404;fontSize=11;" vertex="1" parent="rag_grp">
+      <mxGeometry x="515" y="40" width="150" height="45" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- DATA LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="data_grp" value="Data Layer · PostgreSQL (RDS)" style="swimlane;startSize=30;fillColor=#F1EFE8;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontStyle=1;fontSize=12;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="910" width="1500" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_users" value="Users" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="20" y="30" width="140" height="48" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_emp" value="Employees" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="180" y="30" width="160" height="48" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_wf" value="Onboarding Workflows" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="360" y="30" width="200" height="48" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_tasks" value="Onboarding Tasks" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="580" y="30" width="180" height="48" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_notif" value="Notifications" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="780" y="30" width="170" height="48" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_docs" value="Uploaded Documents" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="970" y="30" width="200" height="48" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_audit" value="Audit Logs" style="shape=cylinder3;whiteSpace=wrap;fillColor=#D3D1C7;strokeColor=#5F5E5A;fontColor=#2C2C2A;fontSize=11;" vertex="1" parent="data_grp">
+      <mxGeometry x="1190" y="30" width="160" height="48" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- NOTIFICATION LAYER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="notif_grp" value="Notification Layer" style="swimlane;startSize=30;fillColor=#FBEAF0;strokeColor=#D4537E;fontColor=#4B1528;fontStyle=1;fontSize=12;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1050" width="1500" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_email" value="Email Channel" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="20" y="38" width="180" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_inapp" value="In-App Notifications" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="220" y="38" width="200" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_t1" value="Workflow Started" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="450" y="38" width="180" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_t2" value="Task Assigned" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="650" y="38" width="180" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_t3" value="Task Completed" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="850" y="38" width="180" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_t4" value="Delayed Task" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="1050" y="38" width="180" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="no_t5" value="Workflow Completed" style="rounded=1;fillColor=#F4C0D1;strokeColor=#993556;fontColor=#4B1528;fontSize=11;" vertex="1" parent="notif_grp">
+      <mxGeometry x="1250" y="38" width="200" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- AWS INFRASTRUCTURE -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="aws_grp" value="AWS Infrastructure · ECS Fargate · RDS · CloudFront · ALB · S3 · CloudWatch · GitHub Actions" style="swimlane;startSize=30;fillColor=#E6F1FB;strokeColor=#185FA5;fontColor=#042C53;fontStyle=1;fontSize=11;rounded=1;arcSize=5;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1190" width="1500" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_cf" value="CloudFront CDN&#xa;React Frontend" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="20" y="38" width="170" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_alb" value="Application Load Balancer" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="210" y="38" width="190" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_ecs" value="ECS Fargate&#xa;FastAPI Containers" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="420" y="38" width="190" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_rds" value="RDS PostgreSQL&#xa;Multi-AZ" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="630" y="38" width="170" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_chroma" value="ChromaDB&#xa;Vector Store" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="820" y="38" width="170" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_litellm" value="LiteLLM Proxy&#xa;Container" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="1010" y="38" width="170" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_cw" value="CloudWatch&#xa;Prometheus · Grafana" style="rounded=1;fillColor=#B5D4F4;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="1200" y="38" width="190" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="aw_cicd" value="GitHub Actions&#xa;Docker · AWS ECS Deploy" style="rounded=1;fillColor=#85B7EB;strokeColor=#185FA5;fontColor=#042C53;fontSize=11;" vertex="1" parent="aws_grp">
+      <mxGeometry x="1410" y="38" width="60" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- CONNECTIONS (between groups) -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Users -> Frontend -->
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#7F77DD;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" source="users_grp" target="fe_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- Frontend -> API -->
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#378ADD;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" source="fe_grp" target="api_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- API -> Services -->
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1D9E75;" edge="1" source="api_grp" target="svc_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- Services -> AI Orch -->
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#BA7517;" edge="1" source="svc_grp" target="ai_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- AI Orch -> LLM GW -->
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#D85A30;" edge="1" source="ai_grp" target="llm_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- AI Orch -> RAG -->
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#639922;" edge="1" source="ai_grp" target="rag_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- RAG -> AI Orch (return) -->
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#3B6D11;dashed=1;exitX=0.5;exitY=0;entryX=0.75;entryY=1;" edge="1" source="rag_grp" target="ai_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- Services -> Data -->
+    <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#5F5E5A;" edge="1" source="svc_grp" target="data_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- Services -> Notify -->
+    <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#D4537E;" edge="1" source="svc_grp" target="notif_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+    <!-- All -> AWS Infra -->
+    <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#185FA5;dashed=1;" edge="1" source="notif_grp" target="aws_grp" parent="1">
+      <mxGeometry relative="1" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>
